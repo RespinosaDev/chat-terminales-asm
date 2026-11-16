@@ -1,10 +1,8 @@
 # E/S por interrupciones · MC68000 + DUART MC68681
 
-Gestión de entrada/salida serie **por interrupciones** en **ensamblador del Motorola 68000**, sobre el controlador de comunicaciones **DUART MC68681**. El programa principal conecta las dos líneas serie del controlador: lo que se escribe en el terminal de la **línea A** aparece en el de la **línea B**, y viceversa, como un chat entre dos terminales.
+Entrada/salida serie **por interrupciones** en **ensamblador del Motorola 68000**, usando el controlador de comunicaciones **DUART MC68681**. El programa principal conecta las dos líneas serie: lo que escribes en el terminal de la **línea A** aparece en el de la **línea B** y al revés, como si fuera un chat entre dos terminales.
 
-> 🎓 **Proyecto académico**: práctica de la asignatura *Arquitectura de Computadores* (Grado en Ingeniería Informática)<br>
-> Universidad Politécnica de Madrid · Campus de Montegancedo<br>
-> 👥 Trabajo individual
+Es una práctica de la asignatura *Arquitectura de Computadores* (Grado en Ingeniería Informática, Universidad Politécnica de Madrid). La hice de forma individual.
 
 ---
 
@@ -43,6 +41,6 @@ Se ejecuta en el simulador **BSVC** (Bradford's 68000 simulator) con el ensambla
 2. Abrir BSVC, cargar `practica.setup` y después `es_int.h68`.
 3. Ejecutar: se abren dos `xterm`, uno por línea. Lo que se escribe en uno aparece en el otro.
 
-## Correcciones respecto a la entrega
+## Qué corregí respecto a la entrega
 
 - `SCAN` y `PRINT` usaban `D1` y `A0` sin salvarlos. Ahora conservan todos los registros del llamador salvo `D0`, que es el valor de retorno.
